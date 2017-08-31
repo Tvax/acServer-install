@@ -15,9 +15,8 @@ acDownload(){
 	echo "Enter your Steam password: ";
 	read password;
 
-	read -e -p "Path to download Assetto Corsa's server files : " -i "~/AC" PATH;
-	echo $PATH;
-	mkdir $PATH;
+	read -e -p "Path to download Assetto Corsa's server files : " -i "$HOME/AC" directory;
+	mkdir -p "$directory";
 	./steamcmd.sh +@sSteamCmdForcePlatformType windows +login $username $password +force_install_dir $PATH +app_update 302550 +quit
 }
 
